@@ -3,7 +3,7 @@ h1 {
   text-transform: uppercase;
   text-align: center;
   margin: 3vmin auto;
-  font-family: 'Boogaloo', cursive;
+  font-family: 'Boogaloo', sans-serif;
 }
 
 .Grid {
@@ -34,10 +34,42 @@ h1 {
 
 .Exit {
   background-color: hsl(30, 75%, 70%);
+  width: 100%;
+  height: 100%;
 }
+
 .GridCell img {
   display: block;
   width: calc(100% - 4vmin);
   height: calc(100% - 4vmin);
   padding: 2vmin;
 }
+
+.GridCell .svg-wrapper {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: transform 400ms;
+}
+.GridCell svg {
+  width: calc(96% - 4vmin);
+  height: calc(96% - 4vmin);
+  padding: 2vmin;
+
+}
+
+/* .GridCell img.down { 
+  transform: translate(0, -8rem);
+}
+
+.GridCell img.up { 
+  transform: translate(0, 8rem);
+}
+
+.GridCell img.right { 
+  transform: translate(-8rem, 0);
+}
+
+.GridCell img.left { 
+  transform: translate(8rem, 0);
+} */

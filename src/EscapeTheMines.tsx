@@ -16,7 +16,7 @@ export const EscapeTheMines: React.FC<Props> = ({
   miner: initialMiner,
   exit
 }) => {
-  const { miner } = useEscapeTheMines(caveMap, initialMiner, exit)
+  const { miner, direction } = useEscapeTheMines(caveMap, initialMiner, exit, 500, 2000)
 
   const cols = caveMap.length
   const rows = caveMap[0].length
@@ -31,9 +31,9 @@ export const EscapeTheMines: React.FC<Props> = ({
             const hasMiner = miner[0] === x && miner[1] === y
 
             let content = null
-            if (isExit && hasMiner) content = <MinerInExit />
+            if (isExit && hasMiner) content = <MinerInExit direction={direction} />
             else if (isExit) content = <Exit />
-            else if (hasMiner) content = <Miner />
+            else if (hasMiner) content = <Miner direction={direction}/>
 
             const cell = caveMap[x][y] ? <Path>{content}</Path> : <Wall></Wall>
             return (
